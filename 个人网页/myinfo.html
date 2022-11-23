@@ -1,0 +1,75 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.js"></script>
+</head>
+
+<body>
+    <h1>大家好</h1>
+    <h2>My name is <span id="myname"></span></h2>
+    <p id="myintor">
+
+    </p>
+    <input type="button" name="" id="" value="修改" onclick="resetinfo()">
+    <input type="button" name="" id="" value="删除" onclick="removeinfo()">
+    <input type="button" name="" id="" value="返回" onclick=" location.href = 'homepage.html'">
+
+</body>
+
+<script>
+    let i = 0
+    let url = decodeURI(window.location.href);
+    let argsIndex = url.split("?i=");
+    i = argsIndex[1]
+    //获取名字
+    let myname = document.getElementById('myname');
+    myname.innerText = localStorage.getItem('name' + i);
+    //获取介绍
+    let myintor = document.getElementById('myintor');
+    myintor.innerText = localStorage.getItem('intor' + i)
+
+    function removeinfo() {
+        var rem = window.location.search, j;
+        let num = rem.split('?i=')[1]
+        console.log("name" + num);
+        localStorage.removeItem("name" + num);
+        // console.log(num);
+        // j = Number(num) + 1;
+        // for (j; ('name'+j).value != null ; j++) {
+        //     console.log(j);
+        //     let na = localStorage.getElementById("name" + j)
+        //     localStorage.setItem('name' + j, na)
+        //     let intor = localStorage.getItem("intor" + j)
+        //     localStorage.setItem('intor' + j, intor)
+        //     //     var a = localStorage.getItem("name" + (j + 1));
+        //     //     j = localStorage.setItem('a');
+        //     //     console.log(a);
+        // }
+        //回到homepage
+        location.href = 'homepage.html'
+    }
+
+    // function deleteinfo() {
+    //     //获取输入的数字
+    //     // let j = document.getElementById('del_value').value
+    //     let j=window.location.search
+    //     j=j.split('?i=')[1]
+    //     console.log(j)
+    //     for (j; j != ''; j++) {
+    //         //变为number型数据
+    //         let n = Nuber(j) + 1
+    //         //替换过程
+    //         let name = localStorage.getItem('name' + n)
+    //         localStorage.setItem('name' + j, name)
+    //         let intor = localStorage.getItem('intor' + n)
+    //         localStorage.setItem('intor' + j, intor)
+    //     }
+
+
+    //     //删除赋值前的
+    //     var rem = window.location.search;
+    //     n = rem.split('?i=')[1]
+    //     localStorage.removeItem("name" + n);
+    //     localStorage.removeItem("intor" + n);
+    // }
+
+</script>

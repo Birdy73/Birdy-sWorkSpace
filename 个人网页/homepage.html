@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./myweb-icon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.js"></script>
+    <title>Homepage</title>
+</head>
+
+<body>
+    <h3>欢迎来到我的页面 <span class="jump theme">🙌</span></h2>
+    </h3>
+    <h5>下面是我和我的舍友的一些介绍</h5>
+    <p id="alla"><a href="./'boutme.html">自我介绍</a></p>
+    <p id="new"><a href="setinfo.html">新增</a></p>
+    <!-- <p>
+        <a href="./myinfo.html?i=0" id="myname">name</a>
+        <a href="./myinfo.html?i=1" id="nameTwo">name</a>
+        <a href="./myinfo.html?i=2" id="nameThree">name</a>
+    </p> -->
+</body>
+
+<script>
+    //  function setinfo() {
+    //     let html
+    //     let i;
+    //     for (i = 0; i >= 0;) {
+    //         let ifname = localStorage.getItem('name' + i)
+    //         let alla = document.getElementById('alla')
+    //         if (localStorage.getItem('name' + i) != null) {
+    //             //自定义代码
+    //             console.log('key 存在' + 'key的值为' + ifname)
+    //             console.log('这是第' + i + '个用户')
+    //             html = document.createElement('a');
+    //             html.setAttribute('href', './myinfo.html?i=' + i);
+    //             html.innerText = ifname
+    //             alla.appendChild(html)
+    //             i++
+    //             continue;
+    //         } else {
+    //             console.log('key 不存在')
+    //             break;
+    //         }
+    //     }
+    // }
+    // setinfo()
+
+    function setinfo() {
+        let html
+        let i;
+        for (i = 0; i >= 0;) {
+            let ifname = localStorage.getItem('name' + i)
+            let alla = document.getElementById('alla')
+            if (localStorage.getItem('name' + i) != null) {
+                //自定义代码
+                console.log('key 存在' + 'key的值为' + ifname)
+                console.log('这是第' + i + '个用户')
+                //2.随机P标签颜色
+                let items = ['1', '2', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+                let item = items[Math.floor(Math.random() * items.length)];
+                let item_color = ['a-black', 'a-red', 'a-pink', 'a-purple', 'a-violet', 'a-indigo', 'a-orange', 'a-indigo', 'a-blue', 'a-cyan', 'a-teal', 'a-yellow']
+                //1.向P标签中添加a标签
+                html = document.createElement('a');
+                html.setAttribute('href', './myinfo.html?i=' + i);
+                //3.为a标签绑定随机的class
+                html.setAttribute('class', item_color[item]);
+                html.innerText = ifname
+                alla.appendChild(html)
+                i++
+                continue;
+            } else {
+                console.log('key 不存在')
+                break;
+            }
+        }
+    }
+    setinfo()
+    // let myname = document.getElementById('myname');
+    // myname.innerText = localStorage.getItem('name0')
+    // let nameTwo = document.getElementById('nameTwo');
+    // nameTwo.innerText = localStorage.getItem('name1')
+    // let nameThree = document.getElementById('nameThree');
+    // nameThree.innerText = localStorage.getItem('name2')
+</script>
+
+<style>
+
+</style>
+
+</html>

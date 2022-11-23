@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sedom/dist/sedom.min.js"></script>
+    <title>setinfo</title>
+</head>
+
+<body>
+    <input type="text" name="" id="myname" placeholder="请输入名字" ><br>
+    <input type="text" name="" id="myintor" placeholder="请输入介绍">
+    <input type="button" name="" id="" value="提交" onclick="setinfo()">
+    <input type="button" name="" id="" value="返回" onclick=" location.href = 'homepage.html'">
+
+</body>
+
+<script>
+    let myname = document.getElementById('myname')
+    let myintor = document.getElementById('myintor')
+    function setinfo() {
+        if (myname.value == '' && myintor.value == '') {
+            alert("输入内容不能为空");
+        }
+        else {
+            let i;
+            for (i = 0; i >= 0;) {
+                let ifname = localStorage.getItem('name' + i)
+                if (localStorage.getItem('name' + i) != null) {
+                    //自定义代码
+                    i++
+                    console.log('key 存在' + 'key的值为' + ifname)
+                    continue;
+                }
+                else {
+                    console.log('key 不存在')
+                    localStorage.setItem('name' + i, myname.value)
+                    localStorage.setItem('intor' + i, myintor.value)
+                    break;
+                }
+            }
+            document.getElementById("myname").value = ""
+            document.getElementById("myintor").value = ""
+            //跳转回homepage
+            location.href = 'homepage.html'
+        }
+
+
+    }
+</script>
+
+</html>
