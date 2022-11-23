@@ -9,7 +9,7 @@
     <p id="myintor">
 
     </p>
-    <input type="button" name="" id="" value="修改" onclick="resetinfo()">
+    <input type="button" name="" id="" value="修改" onclick="location .href = 'resetinfo.html'">
     <input type="button" name="" id="" value="删除" onclick="removeinfo()">
     <input type="button" name="" id="" value="返回" onclick=" location.href = 'homepage.html'">
 
@@ -32,6 +32,8 @@
         let num = rem.split('?i=')[1]
         console.log("name" + num);
         localStorage.removeItem("name" + num);
+        localStorage.removeItem("intor" + num);
+
         // console.log(num);
         // j = Number(num) + 1;
         // for (j; ('name'+j).value != null ; j++) {
@@ -44,6 +46,7 @@
         //     //     j = localStorage.setItem('a');
         //     //     console.log(a);
         // }
+
         //回到homepage
         location.href = 'homepage.html'
     }
@@ -63,7 +66,6 @@
     //         let intor = localStorage.getItem('intor' + n)
     //         localStorage.setItem('intor' + j, intor)
     //     }
-
 
     //     //删除赋值前的
     //     var rem = window.location.search;

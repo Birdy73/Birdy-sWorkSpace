@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./myweb-icon.ico" />
     <title>Birdy</title>
     <style>
         body {
@@ -47,11 +48,15 @@
             text-decoration: none;
             font-size: 20px;
             font-weight: 600;
-            color: grey;
+            color: rgba(208, 214, 40, 0.589);
         }
 
         .one:hover {
             color: rgb(6, 173, 151);
+/* 　 text-shawow 其中a指X轴上的位移，b指Y轴上的位移，c指阴影的宽度，color指阴影的颜色值；a、b可为负，c不能为负 */
+            text-shadow: 0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 40px #fff;
         }
     </style>
 </head>
@@ -60,10 +65,11 @@
     <div class="box">
         <img src="./1fd49b518b85dc4b228b25f5592f4bf9.jpg" alt="" class="box-img">
         <h1 class="name">Birdy</h1>
-        <h2>Web Designer</h2>
+        <h2>
+            A modest learner</h2>
         <h3>Welcome to my personal website!</h3>
         <h3>If you want to know more about me,please click this</h3>
-        <a href="./'boutme-page.html" class="one">Birdy</a>
+        <a href="./'boutme-page.html" class="one">'bout me</a>
     </div>
 </body>
 
